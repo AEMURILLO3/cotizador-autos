@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// UI Components
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +17,8 @@ import {
 } from "@/components/ui/select";
 
 export default function CotizarPage() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     marca: "",
     modelo: "",
@@ -32,7 +37,9 @@ export default function CotizarPage() {
     e.preventDefault();
     console.log("Datos del formulario:", formData);
 
-    // Aquí puedes enviar la data a tu API
+    // Aquí puedes enviar la data a tu API si deseas.
+    // Luego redirigimos:
+    router.push("/gracias");
   };
 
   return (
@@ -78,7 +85,7 @@ export default function CotizarPage() {
               />
             </div>
 
-            {/* Tipo de cobertura */}
+            {/* Tipo de Cobertura */}
             <div>
               <Label>Tipo de cobertura</Label>
               <Select onValueChange={(v) => handleChange("cobertura", v)}>
@@ -93,7 +100,7 @@ export default function CotizarPage() {
               </Select>
             </div>
 
-            {/* Tipo de vehículo */}
+            {/* Tipo de Vehículo */}
             <div>
               <Label>Tipo de vehículo</Label>
               <Select onValueChange={(v) => handleChange("tipoVehiculo", v)}>
@@ -109,7 +116,7 @@ export default function CotizarPage() {
               </Select>
             </div>
 
-            {/* Zona del país */}
+            {/* Zona */}
             <div>
               <Label>Zona del país</Label>
               <Select onValueChange={(v) => handleChange("zona", v)}>
