@@ -2,9 +2,52 @@
 
 Este proyecto es una **aplicación web desarrollada con Next.js 14 (App Router)** para permitir a los usuarios autenticarse mediante **Google SSO (NextAuth)** y acceder a una plataforma donde pueden generar una **cotización de seguro vehicular** mediante un formulario.
 
-El proyecto está desplegado en **Vercel**.
+## Link del aplicativo 
+https://cotizador-autos111.vercel.app/
 
----
+# Información de la Empresa
+- SegurosAtlantida
+- Una empresa parte de un sólido grupo financiero que cuenta con el respaldo de más de 112 años de trayectoria
+
+# Información del Estudiante
+Nombre: Andres Murillo Ontaneda
+Materia: DESARRO DE APLICA NAT EN CLOUD
+
+
+# Mapa de Capacidades
+
+1. Capacidades Estratégicas
+
+Gobierno Corporativo: Consejo de Administración, comités de auditoría y riesgo.
+Gestión Financiera: Control de inversiones, resultados técnicos positivos, resiliencia financiera.
+Cumplimiento y Regulación: Políticas internas, auditoría, control de riesgos.
+
+2. Capacidades Operativas
+
+Gestión de Primas y Cartera: Administración de primas por ramo, sucursal y línea de negocio.
+Gestión de Siniestralidad: Procesos para control y distribución de siniestros.
+Atención al Cliente: Call center 24/7, asistencia en emergencias, servicios digitales.
+
+3. Capacidades Tecnológicas
+
+Plataformas Digitales: Aplicación Auto Asistencia Atlántida, MediMóvil.
+Infraestructura TI: Sistemas para cotización, emisión de pólizas y seguimiento.
+
+4. Capacidades de Producto
+
+Seguros de Personas: Vida, accidentes personales, médico hospitalario.
+Seguros Patrimoniales: Autos, incendio, transporte, responsabilidad civil.
+Seguros Especializados: Agrícola, marítimo, aeronáutico, equipo electrónico.
+Fianzas: Cumplimiento, licitación, fidelidad.
+
+5. Capacidades de Talento Humano
+
+Formación y Capacitación: Programas internos.
+Cultura Organizacional: Clima laboral, iniciativas de bienestar.
+
+
+El proyecto está desplegado en **Vercel**.
+_____________________________________________________________________________
 
 ## Tecnologías utilizadas
 
