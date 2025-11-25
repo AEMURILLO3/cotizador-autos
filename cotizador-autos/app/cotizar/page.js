@@ -29,16 +29,35 @@ export default function CotizarPage() {
     valorComercial: ""
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validación manual para Select y campos vacíos
+    if (
+      !formData.marca ||
+      !formData.modelo ||
+      !formData.anio ||
+      !formData.cobertura ||
+      !formData.tipoVehiculo ||
+      !formData.zona ||
+      !formData.valorComercial
+    ) {
+      setError("Por favor, complete todos los campos obligatorios.");
+      return;
+    }
+
+    setError(""); // Limpia el mensaje
+
     console.log("Datos del formulario:", formData);
 
-    // Aquí puedes enviar la data a tu API si deseas.
-    // Luego redirigimos:
+    // Puedes enviar la data a una API aquí...
+
     router.push("/gracias");
   };
 
@@ -52,12 +71,19 @@ export default function CotizarPage() {
         </CardHeader>
 
         <CardContent>
+          {error && (
+            <p className="text-red-600 text-center mb-3 font-semibold">
+              {error}
+            </p>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-5">
 
             {/* Marca */}
             <div>
-              <Label>Marca</Label>
+              <Label>Marca *</Label>
               <Input
+                required
                 value={formData.marca}
                 onChange={(e) => handleChange("marca", e.target.value)}
                 placeholder="Ej: Toyota"
@@ -66,8 +92,9 @@ export default function CotizarPage() {
 
             {/* Modelo */}
             <div>
-              <Label>Modelo</Label>
+              <Label>Modelo *</Label>
               <Input
+                required
                 value={formData.modelo}
                 onChange={(e) => handleChange("modelo", e.target.value)}
                 placeholder="Ej: Corolla"
@@ -76,9 +103,10 @@ export default function CotizarPage() {
 
             {/* Año */}
             <div>
-              <Label>Año</Label>
+              <Label>Año *</Label>
               <Input
                 type="number"
+                required
                 value={formData.anio}
                 onChange={(e) => handleChange("anio", e.target.value)}
                 placeholder="2020"
@@ -87,7 +115,7 @@ export default function CotizarPage() {
 
             {/* Tipo de Cobertura */}
             <div>
-              <Label>Tipo de cobertura</Label>
+              <Label>Tipo de cobertura *</Label>
               <Select onValueChange={(v) => handleChange("cobertura", v)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Seleccione cobertura" />
@@ -102,7 +130,7 @@ export default function CotizarPage() {
 
             {/* Tipo de Vehículo */}
             <div>
-              <Label>Tipo de vehículo</Label>
+              <Label>Tipo de vehículo *</Label>
               <Select onValueChange={(v) => handleChange("tipoVehiculo", v)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Seleccione tipo" />
@@ -118,7 +146,7 @@ export default function CotizarPage() {
 
             {/* Zona */}
             <div>
-              <Label>Zona del país</Label>
+              <Label>Zona del país *</Label>
               <Select onValueChange={(v) => handleChange("zona", v)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Seleccione zona" />
@@ -133,11 +161,14 @@ export default function CotizarPage() {
 
             {/* Valor comercial */}
             <div>
-              <Label>Valor comercial</Label>
+              <Label>Valor comercial *</Label>
               <Input
                 type="number"
+                required
                 value={formData.valorComercial}
-                onChange={(e) => handleChange("valorComercial", e.target.value)}
+                onChange={(e) =>
+                  handleChange("valorComercial", e.target.value)
+                }
                 placeholder="Ej: 18000"
               />
             </div>
