@@ -8,7 +8,18 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     })
   ],
+
+  secret: process.env.NEXTAUTH_SECRET,
+
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      // Después del login, manda al usuario al formulario
+      return `${baseUrl}/cotizar`;
+    }
+  }
 };
 
 const handler = NextAuth(authOptions);
+
 export { handler as GET, handler as POST };
+
